@@ -22,4 +22,10 @@ public class UserController {
         List<User> result = repository.findAll();
         return result;
     }
+
+    @GetMapping(value = "/{id}")
+    public User findById(Long id){
+        User result = repository.findById(id).get();
+        return result;
+    }
 }
